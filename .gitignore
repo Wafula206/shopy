@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+
+# Django secrets
+*.log
+.env
+local_settings.py
+
+# Static and media
+staticfiles/
+media/
+
+# DB (only using SQLite)
+db.sqlite3
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Python build
+*.egg-info/
+build/
+dist/

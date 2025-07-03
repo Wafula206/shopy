@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: #0d6efd;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+header h1 {
+    padding: 15px 30px;
+    font-size: 24px;
+    background-color: #0d6efd;
+    color: #ffffff;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 0;
+    background-color: #ffffff;
+    flex-wrap: wrap;
+}
+
+nav a,
+nav form button {
+    color: #0d6efd;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    transition: background-color 0.2s ease-in-out;
+}
+
+nav a:hover,
+nav form button:hover {
+    background-color: #e9f2ff;
+}
+
+main {
+    flex: 1;
+    max-width: 960px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+form button {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+form button:hover {
+    background-color: #0b5ed7;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #0d6efd; 
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    margin-top: 40px;
+    border-top: none;
+}
+
+
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #dee2e6;
+}
+
+.alert {
+    padding: 10px 15px;
+    background-color: #e2f0d9;
+    border-left: 4px solid #20c997;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    color: #2c3e50;
+}
+
+@media (max-width: 600px) {
+    main {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+}
