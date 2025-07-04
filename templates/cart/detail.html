@@ -1,18 +1,31 @@
 {% extends "base/base.html" %}
 {% block content %}
+
 <h2>Your Cart</h2>
+
 {% if cart %}
     <ul>
         {% for item in cart %}
             <li>
-                {{ item.product.name }} — {{ item.quantity }} × {{ item.product.selling_price }} =
-                Ksh {{ item.total_price }}
+                <strong>{{ item.product.name }}</strong> — 
+                {{ item.quantity }} × Ksh {{ item.product.selling_price }} = 
+                <strong>Ksh {{ item.total_price }}</strong>
                 <a href="{% url 'cart_remove' item.product.id %}">Remove</a>
             </li>
         {% endfor %}
     </ul>
+
     <p><strong>Total: Ksh {{ cart.get_total_price }}</strong></p>
+
+    <a href="{% url 'checkout' %}">
+        <button>Proceed to Checkout</button>
+    </a>
+
+    <br><br>
+    <a href="{% url 'product_list' %}">Continue Shopping</a>
 {% else %}
     <p>Your cart is empty.</p>
+    <a href="{% url 'product_list' %}">Go to Products</a>
 {% endif %}
+
 {% endblock %}

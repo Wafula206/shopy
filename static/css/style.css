@@ -1,3 +1,4 @@
+/* Reset and Base */
 * {
     margin: 0;
     padding: 0;
@@ -5,105 +6,132 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f8f9fa;
-    color: #212529;
-    line-height: 1.6;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background-color: #f4f4f7;
+    color: #333;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    line-height: 1.6;
 }
 
+/* Links */
 a {
-    color: #0d6efd;
+    color: #3490dc;
     text-decoration: none;
-    transition: 0.2s;
+    transition: 0.3s ease;
 }
-
 a:hover {
+    color: #1d72b8;
     text-decoration: underline;
 }
 
+/* Header */
 header {
-    background-color: #ffffff;
-    border-bottom: 1px solid #dee2e6;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+    padding: 1.5rem 0;
 }
 
 header h1 {
-    padding: 15px 30px;
-    font-size: 24px;
-    background-color: #0d6efd;
-    color: #ffffff;
+    text-align: center;
+    color: #3490dc;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
+/* Navigation */
 nav {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 20px;
-    padding: 12px 0;
-    background-color: #ffffff;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
 
 nav a,
 nav form button {
-    color: #0d6efd;
+    padding: 8px 14px;
+    font-size: 15px;
     font-weight: 500;
-    padding: 6px 12px;
+    color: #3490dc;
+    background-color: transparent;
+    border: 1px solid transparent;
     border-radius: 4px;
-    background: transparent;
-    border: none;
+    transition: 0.3s ease;
     cursor: pointer;
-    font: inherit;
-    transition: background-color 0.2s ease-in-out;
 }
 
 nav a:hover,
 nav form button:hover {
-    background-color: #e9f2ff;
+    background-color: #e6f0fa;
+    border-color: #cbe1f1;
 }
 
+/* Main */
 main {
     flex: 1;
-    max-width: 960px;
+    max-width: 900px;
     margin: 30px auto;
-    background-color: #ffffff;
     padding: 30px;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
-form input[type="text"],
-form input[type="email"],
-form input[type="password"],
-form input[type="number"],
+/* Footer */
+footer {
+    background-color: #3490dc;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 15px;
+    margin-top: 40px;
+}
+
+/* Forms */
+form input,
 form select,
 form textarea {
     width: 100%;
-    padding: 10px 12px;
+    padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: #fff;
 }
 
 form button {
-    background-color: #0d6efd;
-    color: white;
+    padding: 10px 20px;
+    background-color: #3490dc;
+    color: #fff;
     border: none;
-    padding: 10px 18px;
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 5px;
     font-weight: 500;
+    transition: 0.3s;
+    cursor: pointer;
 }
-
 form button:hover {
-    background-color: #0b5ed7;
+    background-color: #2779bd;
 }
 
+/* Lists / Cart Items */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #f9fafb;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #e0e6ed;
+    border-radius: 6px;
+}
+
+/* Images */
 img {
     max-width: 100%;
     height: auto;
@@ -111,41 +139,25 @@ img {
     margin-top: 10px;
 }
 
-footer {
-    background-color: #0d6efd; 
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
-    margin-top: 40px;
-    border-top: none;
-}
-
-
-hr {
-    margin: 20px 0;
-    border: none;
-    border-top: 1px solid #dee2e6;
-}
-
+/* Alert Message */
 .alert {
-    padding: 10px 15px;
-    background-color: #e2f0d9;
-    border-left: 4px solid #20c997;
-    margin-bottom: 15px;
+    background-color: #e6ffed;
+    color: #2e7d32;
+    border-left: 4px solid #66bb6a;
+    padding: 12px 18px;
     border-radius: 4px;
-    color: #2c3e50;
+    margin-bottom: 15px;
 }
 
-@media (max-width: 600px) {
+/* Responsive */
+@media (max-width: 640px) {
     main {
-        margin: 15px;
+        margin: 20px;
         padding: 20px;
     }
 
     nav {
         flex-direction: column;
-        gap: 10px;
-        padding: 15px;
+        gap: 12px;
     }
 }
