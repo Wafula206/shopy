@@ -2,30 +2,36 @@
 
 {% block content %}
 <h2>Available Products</h2>
-<ul>
+
+<form method="get" action="{% url 'product_list' %}" class="search-form">
+    <input type="text" name="q" placeholder="Search products..." value="{{ request.GET.q }}">
+    <button type="submit">Search</button>
+</form>
+
+<div class="product-grid">
     {% for product in products %}
-        <li>
-            <strong>{{ product.name }}</strong><br>
-            Category: {{ product.category }}<br>
-            Price: Ksh {{ product.selling_price }}<br>
+        <div class="product-card">
+            <h3>{{ product.name }}</h3>
+            <p>Category: {{ product.category }}</p>
+            <p class="price">Ksh {{ product.selling_price }}</p>
 
             {% if product.image %}
-                <img src="{{ product.image.url }}" width="150"><br>
+                <img src="{{ product.image.url }}" class="product-image">
             {% endif %}
 
             {% if user.is_staff %}
-                <small>Buying Price: {{ product.buying_price }}</small><br>
-                <small>Stock: {{ product.stock }}</small><br>
+                <p class="staff-only">Buying Price: {{ product.buying_price }}</p>
+                <p class="staff-only">Stock: {{ product.stock }}</p>
             {% endif %}
 
-            <form action="{% url 'cart_add' product.id %}" method="post">
-    {% csrf_token %}
-    <input type="number" name="quantity" value="1" min="1" style="width: 60px;">
-    <button type="submit">Add to Cart</button>
-</form>
-
-            <hr>
-        </li>
+            <form action="{% url 'cart_add' product.id %}" method="post" class="cart-form">
+                {% csrf_token %}
+                <input type="number" name="quantity" value="1" min="1">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+    {% empty %}
+        <p>No products found.</p>
     {% endfor %}
-</ul>
+</div>
 {% endblock %}
